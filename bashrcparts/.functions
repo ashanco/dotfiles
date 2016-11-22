@@ -1,0 +1,16 @@
+function up() {
+    if [ $# -gt 1 ]
+    then
+        echo "Usage: up [levels]"
+    fi
+    if [ $# -eq 1 ]
+    then
+        if [ $1 -eq $1 2>/dev/null ]
+        then
+            for i in `seq $1`; do cd ..; done
+        else
+            echo "Argument must be an integer"
+        fi
+    else cd ..
+    fi
+}
